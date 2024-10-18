@@ -1,16 +1,40 @@
-import { FlatList, View, Text} from 'react-native'
+import { FlatList, View, Text, SafeAreaView, ScrollView, StatusBar, Platform} from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { collection, onSnapshot, query, where } from 'firebase/firestore'
-import { authentication, db } from '../firebase'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-import Ecopoints from './Ecopoints'
-import Perfil from './Perfil'
+import styles from '../styles/styles';
 
 
-
-export default function Home({navigation}) {
+export default function Home() {
     return (
-        <View>oi</View>
+        <SafeAreaView style={styles.container1}>
+            <ScrollView>
+                <View style={styles.content}>
+                    <Text>Conteudo 01</Text>
+                </View>
+                <View  style={styles.content}>
+                    <Text>Conteudo 02</Text>
+                </View >
+                <View  style={styles.content}>
+                    <Text>Conteudo 03</Text>
+                </View>
+                <View  style={styles.content}>
+                    <Text>Conteudo 04</Text>
+                </View>
+                <View  style={styles.content}>
+                    <Text>Conteudo 05</Text>
+                </View>
+                <View  style={styles.content}>
+                    <Text>Conteudo 06</Text>
+                </View>
+                <View  style={styles.content}>
+                    <Text>Conteudo 07</Text>
+                </View>
+                <View  style={styles.content}>
+                    <Text>Conteudo 08</Text>
+                </View>
+                <View  style={styles.content}>
+                    <Text>Conteudo 09</Text>
+                </View>
+            </ScrollView>
+        </SafeAreaView>
       );
 }

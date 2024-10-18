@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { color } from 'react-native-elements/dist/helpers';
 const styles = StyleSheet.create({
     container: {
@@ -6,6 +6,12 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    container1:{
+        flex:1,
+        backgroundColor:'#040316',
+        paddingTop: Platform.OS == 'ios'
+
     },
     formTitle:{
         fontSize:36,
@@ -73,6 +79,16 @@ const styles = StyleSheet.create({
         fontSize:20,
         fontWeight:"bold",
         color:"#333"
+    },
+    content:{
+        alignSelf: "center",
+        flex: 1,
+        width:"98%",
+        height:120,
+        marginBottom: 20,
+        backgroundColor:"#f1f1f1",
+        alignItems: 'center',
+        justifyContent:'center'
     }
   });
 
