@@ -11,6 +11,6 @@ import Perfil from './Perfil'
 
 export default function Home({navigation}) {
     return (
-        <View></View>
+        <View>oi</View>
       );
 }
