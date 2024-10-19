@@ -1,11 +1,11 @@
-import { Pressable, Text, TextInput, View, } from 'react-native'
+import { Pressable, Text, TextInput, View, TouchableOpacity } from 'react-native'
 import styles from '../styles/styles';
 import React, { useEffect, useState } from 'react'
 import { Input, Button } from 'react-native-elements';
 import { onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
 import { authentication } from '../firebase';
 import * as Animatable from 'react-native-animatable';
-import { TouchableOpacity } from 'react-native';
+
 
 
 const Login = ({navigation}) => {
@@ -76,7 +76,6 @@ const Login = ({navigation}) => {
         </TouchableOpacity> 
 
       </Animatable.View>
-
     </View>
   )
 }

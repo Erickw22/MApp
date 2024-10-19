@@ -11,7 +11,12 @@ const styles = StyleSheet.create({
         paddingTop: Platform.OS == 'ios'
     },
     containerHeader:{
-        marginTop:"40%",
+        marginTop:"35%",
+        marginBottom:"8%",
+        paddingStart:"5%",
+    },
+    containerHeaderCadastro:{
+        marginTop:"5%",
         marginBottom:"8%",
         paddingStart:"5%",
     },

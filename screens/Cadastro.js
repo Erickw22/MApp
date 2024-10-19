@@ -1,10 +1,12 @@
-import { View } from "react-native";
+import { View, Text, TextInput,TouchableOpacity } from "react-native";
 import styles from "../styles/styles";
 import React, { useState } from "react";
 import { Input, Button } from "react-native-elements";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { authentication, db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
+import * as Animatable from 'react-native-animatable';
+
 
 export default function Cadastro () {
   const [nome, setNome] = useState("");
@@ -30,40 +32,56 @@ export default function Cadastro () {
 
   return (
     <View style={styles.container}>
-      <Input
-        placeholder="Digite seu Nome"
-        label="Nome"
-        leftIcon={{ type: "material", name: "badge" }}
+      <Animatable.View animation='fadeInLeft' delay={500} style={styles.containerHeaderCadastro}>
+      </Animatable.View>
+
+      <Animatable.View animation='fadeInUp'  style={styles.containerForm}>
+        <Text style={styles.title}>Nome</Text>
+
+        <TextInput
+        placeholder='Digite seu Nome'
+        keyboardType="name-phone-pad"
+        style={styles.input}
         value={nome}
         onChangeText={(text) => setNome(text)}
-      />
-      <Input
-        placeholder="Digite seu Email"
-        label="Email"
-        leftIcon={{ type: "material", name: "email" }}
+        
+        />
+        <Text style={styles.title}>Email</Text>
+        
+        <TextInput
+        placeholder='Digite seu Email'
+        keyboardType="email-address"
+        style={styles.input}
         value={email}
         onChangeText={(text) => setEmail(text)}
-      />
-      <Input
-        placeholder="Digite sua Senha"
-        label="Senha"
-        leftIcon={{ type: "material", name: "lock" }}
+        />
+        <Text style={styles.title}>Senha</Text>
+
+        <TextInput
+        placeholder='Senha'
+        style={styles.input}
         value={senha}
         onChangeText={(text) => setSenha(text)}
         secureTextEntry
-      />
-      <Input
-        placeholder="Adicone uma foto com url"
-        label="Foto"
-        leftIcon={{ type: "material", name: "face" }}
+        />
+
+        <Text style={styles.title}>Avatar ou foto</Text>
+
+        <TextInput
+        placeholder='Adicone uma foto com url'
+        keyboardType="url"
+        style={styles.input}
         value={fotoURL}
         onChangeText={(text) => setFotoUrl(text)}
-      />
-      <Button
-        title="Cadastrar-se"
-        onPress={registrar}
-        buttonStyle={styles.formButton}
-      />
+        />
+
+        <TouchableOpacity onPress={registrar} style={styles.button}>
+          <Text style={styles.buttonText}>Cadastrar</Text>
+        </TouchableOpacity>
+
+      </Animatable.View>
     </View>
+    
   );
 };
+
