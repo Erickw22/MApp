@@ -3,82 +3,61 @@ import { color } from 'react-native-elements/dist/helpers';
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: '#30687A',
     },
     container1:{
         flex:1,
-        backgroundColor:'#040316',
+        backgroundColor:'#fff',
         paddingTop: Platform.OS == 'ios'
-
     },
-    formTitle:{
-        fontSize:36,
+    containerHeader:{
+        marginTop:"40%",
+        marginBottom:"8%",
+        paddingStart:"5%",
+    },
+    message:{
+        fontSize: 28,
         fontWeight: 'bold',
-        color: "#30687A",
-        margin:10,
-        width: 150,
-        height: 150,
-        padding: 10
+        color:"#fff"
     },
-    formInput:{
-        borderColor: '#30687A',
-        borderWidth:1,
-        borderRadius:10,
-        fontSize:10,
-        width: "80%",
-        padding:10,
-        margin:10
+    containerForm:{
+        backgroundColor: "#fff",
+        flex:1,
+        borderTopLeftRadius: 25,
+        borderTopRightRadius: 25,
+        paddingStart: "5%",
+        paddingEnd: "5%"
     },
-    formButton:{
+    title:{
+        fontSize:20,
+        marginTop:28
+    },
+    input:{
+        borderBottomWidth: 1,
+        height: 40,
+        marginBottom: 12,
+        fontSize: 16
+    },
+    button:{
         backgroundColor: "#30687A",
-        color: "#30687A",
         width: "100%",
-        margin: 10,
-        padding: 10,
-        borderRadius: 10,
+        borderRadius: 4,
+        paddingVertical: 8,
+        marginTop: 14,
+        justifyContent: "center",
         alignItems: "center"
     },
-    textButton:{
-        color:"#FFF",
-        fontSize: 20,
-        fontWeight: "bold"
-    }, 
-    subContainer:{
-        flexDirection:"row",
-        justifyContent: "space-between",
-        width: "80%"
-    },
-    subButton: {
-        padding: 10
-    },
-    subTextButton:{
-        color: "#30687A"
-    },
-    //Telas internas
-    internalContainer:{
-        flex: 1,
-        alignItems: "flex-start",
-        paddingTop: 25
-    }, 
-    topBar:{
-        flexDirection:"row-reverse",
-        padding:10,
-        backgroundColor:"#30687A",
-        width: "100%",
-        justifyContent: "space-between"
-    },
-    topBarButtonText:{
+    buttonText:{
         color: "#fff",
-        fontSize: 20,
-        fontWeight: "700"
-    }, 
-    area__tab:{
-        backgroundColor:"#333",
-        fontSize:20,
-        fontWeight:"bold",
-        color:"#333"
+        fontSize: 18,
+        fontWeight: 'bold'
+    },
+    buttonRegister:{
+        marginTop:14,
+        alignSelf: "center"
+    },
+    registerText:{
+        color:"#a1a1a1"
     },
     content:{
         alignSelf: "center",

@@ -9,6 +9,7 @@ import Home from "./screens/Home";
 import Ecopoints from './screens/Ecopoints'
 import Chat from './screens/Chat'
 import Perfil from "./screens/Perfil";
+import Mudanca from "./screens/Mudanca";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,6 +19,7 @@ function Entrar() {
   return (
     <Tab.Navigator 
     screenOptions={{
+      tabBarActiveTintColor:"#fff",
       tabBarShowLabel: false,
       tabBarStyle:{
         position: 'absolute',
@@ -70,9 +72,9 @@ function Entrar() {
         headerShown: false,
         tabBarIcon: ({color, size,focused})=>{
           if(focused){
-            return <Ionicons name="home" size={size} color={color}/>
+            return <Ionicons name="person" size={size} color={color}/>
           }
-          return <Ionicons name="home-outline" size={size} color={color}/>
+          return <Ionicons name="person-outline" size={size} color={color}/>
         }  
       }}
        />
@@ -86,6 +88,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login}
         options={{
+          headerShown: false,
           title:"Login",
           headerTitleAlign:"center",
           headerStyle: {
@@ -111,6 +114,18 @@ export default function App() {
         <Stack.Screen name="Home" component={Entrar}
         options={{
           title:"Home",
+          headerTitleAlign:"center",
+          headerStyle: {
+            backgroundColor: '#30687A',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          }
+        }} />
+        <Stack.Screen name="Mudanca" component={Mudanca}
+        options={{
+          title:"Mudanca",
           headerTitleAlign:"center",
           headerStyle: {
             backgroundColor: '#30687A',
