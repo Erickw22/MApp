@@ -1,4 +1,4 @@
-# Nome do Aplicativo
+# Mares do nordeste
 
 Um aplicativo React Native para interação social, onde usuários podem se cadastrar, enviar mensagens em tempo real e compartilhar postagens. O app utiliza Firebase para autenticação e armazenamento de dados.
 
