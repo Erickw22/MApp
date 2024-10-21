@@ -155,7 +155,7 @@ function ChatStack() {
 // Componente principal da navegação
 export default function App() {
   return (
-    <PostProvider> {/* Provedor de contexto para postagens */}
+    <PostProvider> 
       <NavigationContainer>
         <Stack.Navigator>
           {/* Tela de Login */}
