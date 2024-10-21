@@ -96,4 +96,4 @@ Este projeto é licenciado sob a MIT License. Veja o arquivo LICENSE para mais d
 
 ## Contatos
 - Email: erick.weslley.lima@gmail.com
-- GitHub: Erickw22
+- GitHub: [Erickw22](https://github.com/Erickw22)
