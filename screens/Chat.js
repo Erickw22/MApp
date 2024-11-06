@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 18, // Tamanho da fonte do título
     fontWeight: 'bold', // Texto em negrito
-    color: '#333', // Cor do texto (cinza escuro)
+    color: '#fff', // Cor do texto (cinza escuro)
   },
 
   /* Lista de mensagens com padding extra na parte inferior */
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   /* Estilo para mensagens enviadas pelo usuário (lado direito) */
   messageSent: {
     alignSelf: 'flex-end', // Alinha à direita
-    backgroundColor: '#30687A', // Fundo azul
+    backgroundColor: '#5293A8', // Fundo azul
     borderRadius: 10, // Bordas arredondadas
     padding: 10, // Padding interno da mensagem
     marginLeft: 30, // Espaço à esquerda da mensagem
@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1, // Ocupa todo o espaço restante na linha
     borderWidth: 1, // Largura da borda
-    borderColor: '#30687A', // Cor da borda (azul)
+    borderColor: '#215678', // Cor da borda (azul)
     borderRadius: 5, // Bordas arredondadas
     padding: 10, // Padding interno do campo
     marginRight: 10, // Espaço à direita do campo de input
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
 
   /* Estilo para o botão de envio de mensagem */
   sendButton: {
-    backgroundColor: '#30687A', // Cor de fundo do botão
+    backgroundColor: '#215678', // Cor de fundo do botão
     borderRadius: 20, // Bordas arredondadas
     padding: 10, // Padding interno do botão
   },

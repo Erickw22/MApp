@@ -34,7 +34,7 @@ function AppTabs() {
         tabBarShowLabel: false,
         tabBarStyle: {
           position: "absolute",
-          backgroundColor: "#30687A",
+          backgroundColor: "#215678",
           borderTopWidth: 0,
           borderTopColor: "#d1d1d1",
           height: Platform.OS === "ios" ? 80 : 60,
@@ -96,7 +96,7 @@ function AppTabs() {
             }
             return {
               position: "absolute",
-              backgroundColor: "#30687A",
+              backgroundColor: "#215678",
               borderTopWidth: 0,
               bottom: 14,
               left: 14,
@@ -131,7 +131,7 @@ function ChatStack() {
         options={{
           title: "Usuários",
           headerTitleAlign: "center", 
-          headerStyle: { backgroundColor: "#30687A" }, 
+          headerStyle: { backgroundColor: "#215678" }, 
           headerTintColor: "#fff", 
           headerTitleStyle: { fontWeight: "bold" }, 
         }}
@@ -142,7 +142,7 @@ function ChatStack() {
         options={{
           title: "Chat", 
           headerTitleAlign: "center", 
-          headerStyle: { backgroundColor: "#30687A" }, 
+          headerStyle: { backgroundColor: "#215678" }, 
           headerTintColor: "#fff",
           headerTitleStyle: { fontWeight: "bold" }, 
           tabBarStyle: { display: "none" }, 
@@ -171,7 +171,7 @@ export default function App() {
             options={{
               title: "Cadastro",
               headerTitleAlign: "center", 
-              headerStyle: { backgroundColor: "#30687A" }, 
+              headerStyle: { backgroundColor: "#215678" }, 
               headerTintColor: "#fff", 
               headerTitleStyle: { fontWeight: "bold" }, 
             }}
@@ -183,7 +183,7 @@ export default function App() {
             options={{
               title: "Alterar Senha", 
               headerTitleAlign: "center", 
-              headerStyle: { backgroundColor: "#30687A" }, 
+              headerStyle: { backgroundColor: "#215678" }, 
               headerTintColor: "#fff", 
               headerTitleStyle: { fontWeight: "bold" }, 
             }}
@@ -201,7 +201,7 @@ export default function App() {
             options={{
               title: "Criar Postagem", 
               headerTitleAlign: "center", 
-              headerStyle: { backgroundColor: "#30687A" },
+              headerStyle: { backgroundColor: "#215678" },
               headerTintColor: "#fff",
               headerTitleStyle: { fontWeight: "bold" },
             }}

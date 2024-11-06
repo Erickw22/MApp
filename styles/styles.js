@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   /* Container padrão com cor de fundo do aplicativo */
   container: {
     flex: 1,
-    backgroundColor: "#30687A", // Cor de fundo principal
+    backgroundColor: "#215678", // Cor de fundo principal
   },
 
   /* Container da animação das telas de Login e Cadastro */
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     alignSelf: "center", // Centraliza o botão horizontalmente
   },
   button: {
-    backgroundColor: "#30687A", // Cor de fundo do botão
+    backgroundColor: "#215678", // Cor de fundo do botão
     width: "100%", // Largura total
     borderRadius: 20, // Bordas arredondadas
     paddingVertical: 8, // Padding vertical
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10, // Margem horizontal
   },
   userBtnTxt: {
-    color: "#30687A", // Cor do texto
+    color: "#215678", // Cor do texto
   },
   userInfoWrapper: {
     flexDirection: "row", // Alinha as informações do usuário horizontalmente
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     textAlign: "center", // Alinha o texto ao centro
   },
   createPostButton: {
-    backgroundColor: "#30687A", // Cor de fundo do botão
+    backgroundColor: "#215678", // Cor de fundo do botão
     padding: 15, // Padding interno
     borderRadius: 30, // Bordas arredondadas
     alignItems: "center", // Centraliza o conteúdo do botão
