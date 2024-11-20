@@ -1,29 +1,63 @@
-import React from "react"; 
-import { Platform } from "react-native"; 
+import React from "react";
+import { Platform } from "react-native";
 import {
   getFocusedRouteNameFromRoute,
   NavigationContainer,
-} from "@react-navigation/native"; 
-import { createNativeStackNavigator } from "@react-navigation/native-stack"; 
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; 
-import { Ionicons } from "@expo/vector-icons"; 
+} from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from "@expo/vector-icons";
 
 // Importa as telas necessárias
 import Login from "./screens/Login";
 import Cadastro from "./screens/Cadastro";
 import Home from "./screens/Home";
 import Ecopoints from "./screens/Ecopoints";
-import ChatScreen from "./screens/Chat"; 
+import ChatScreen from "./screens/Chat";
 import Perfil from "./screens/Perfil";
 import UserListScreen from "./screens/UserListScreen";
 import Mudanca from "./screens/Mudanca";
 import CreatePost from "./screens/CreatePost"; // Importa a tela CreatePost
 import { PostProvider } from "./screens/PostContext"; // Importa o contexto para gerenciamento de postagens
+import RewardsScreen from "./screens/components/RewardsScreen";
+import QrScannerScreen from "./screens/components/QrScannerScreen"; // Importa a tela de scanner de QR
+
 
 const Stack = createNativeStackNavigator(); // Cria o stack navigator
 const Tab = createBottomTabNavigator(); // Cria o bottom tab navigator
 
+// Componente para a navegação do Chat usando Stack
+function ChatStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="UserList"
+        component={UserListScreen} // Tela que exibe a lista de usuários
+        options={{
+          title: "Usuários",
+          headerTitleAlign: "center",
+          headerStyle: { backgroundColor: "#215678" },
+          headerTintColor: "#fff",
+          headerTitleStyle: { fontWeight: "bold" },
+        }}
+      />
+      <Stack.Screen
+        name="Chat"
+        component={ChatScreen} // Tela de chat
+        options={{
+          title: "Chat",
+          headerTitleAlign: "center",
+          headerStyle: { backgroundColor: "#215678" },
+          headerTintColor: "#fff",
+          headerTitleStyle: { fontWeight: "bold" },
+          tabBarStyle: { display: "none" },
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 
+// Função para as Abas do App
 function AppTabs() {
   return (
     <Tab.Navigator
@@ -60,28 +94,41 @@ function AppTabs() {
             iconName = focused ? "chatbubble" : "chatbubble-outline";
           } else if (route.name === "Perfil") {
             iconName = focused ? "person" : "person-outline";
+          } else if (route.name === "QrScanner") {
+            iconName = focused ? "qr-code" : "qr-code-outline";
+          } else if (route.name === "Rewards") {
+            iconName = focused ? "wallet" : "wallet-outline";
           }
 
           return (
-            <Ionicons 
-              name={iconName} 
-              size={size + 5} 
-              color={color} 
+            <Ionicons
+              name={iconName}
+              size={size + 5}
+              color={color}
             />
           );
         },
       })}
     >
-      {/* Define as telas das abas */}
       <Tab.Screen
         name="Home"
         component={Home}
-        options={{ headerShown: false }} 
+        options={{ headerShown: false }}
       />
       <Tab.Screen
         name="Ecopoints"
         component={Ecopoints}
-        options={{ headerShown: false }} 
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="QrScanner"
+        component={QrScannerScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Rewards"
+        component={RewardsScreen}
+        options={{ headerShown: false }}
       />
       <Tab.Screen
         name="ChatStack"
@@ -121,37 +168,6 @@ function AppTabs() {
   );
 }
 
-// Componente para a navegação do Chat usando Stack
-function ChatStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="UserList"
-        component={UserListScreen} // Tela que exibe a lista de usuários
-        options={{
-          title: "Usuários",
-          headerTitleAlign: "center", 
-          headerStyle: { backgroundColor: "#215678" }, 
-          headerTintColor: "#fff", 
-          headerTitleStyle: { fontWeight: "bold" }, 
-        }}
-      />
-      <Stack.Screen
-        name="Chat"
-        component={ChatScreen} // Tela de chat
-        options={{
-          title: "Chat", 
-          headerTitleAlign: "center", 
-          headerStyle: { backgroundColor: "#215678" }, 
-          headerTintColor: "#fff",
-          headerTitleStyle: { fontWeight: "bold" }, 
-          tabBarStyle: { display: "none" }, 
-        }}
-      />
-    </Stack.Navigator>
-  );
-}
-
 // Componente principal da navegação
 export default function App() {
   return (
@@ -162,7 +178,7 @@ export default function App() {
           <Stack.Screen
             name="Login"
             component={Login}
-            options={{ headerShown: false }} 
+            options={{ headerShown: false }}
           />
           {/* Tela de Cadastro */}
           <Stack.Screen
@@ -170,10 +186,10 @@ export default function App() {
             component={Cadastro}
             options={{
               title: "Cadastro",
-              headerTitleAlign: "center", 
-              headerStyle: { backgroundColor: "#215678" }, 
-              headerTintColor: "#fff", 
-              headerTitleStyle: { fontWeight: "bold" }, 
+              headerTitleAlign: "center",
+              headerStyle: { backgroundColor: "#215678" },
+              headerTintColor: "#fff",
+              headerTitleStyle: { fontWeight: "bold" },
             }}
           />
           {/* Tela para Mudança de Senha */}
@@ -181,11 +197,11 @@ export default function App() {
             name="Mudanca"
             component={Mudanca}
             options={{
-              title: "Alterar Senha", 
-              headerTitleAlign: "center", 
-              headerStyle: { backgroundColor: "#215678" }, 
-              headerTintColor: "#fff", 
-              headerTitleStyle: { fontWeight: "bold" }, 
+              title: "Alterar Senha",
+              headerTitleAlign: "center",
+              headerStyle: { backgroundColor: "#215678" },
+              headerTintColor: "#fff",
+              headerTitleStyle: { fontWeight: "bold" },
             }}
           />
           {/* Navegação das abas */}
@@ -199,8 +215,8 @@ export default function App() {
             name="CreatePost"
             component={CreatePost}
             options={{
-              title: "Criar Postagem", 
-              headerTitleAlign: "center", 
+              title: "Criar Postagem",
+              headerTitleAlign: "center",
               headerStyle: { backgroundColor: "#215678" },
               headerTintColor: "#fff",
               headerTitleStyle: { fontWeight: "bold" },

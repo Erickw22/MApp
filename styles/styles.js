@@ -218,6 +218,12 @@ const styles = StyleSheet.create({
     borderRadius: 10, // Bordas arredondadas
     marginBottom: 10, // Margem inferior
   },
+  centerText: {
+    fontSize: 18,
+    padding: 16,
+    color: '#333',
+    textAlign: 'center',
+  },
 });
 
 export default styles;
